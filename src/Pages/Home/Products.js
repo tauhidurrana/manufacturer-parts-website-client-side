@@ -7,7 +7,7 @@ const Products = () => {
     const sliceProducts = products.slice(0, 3);
 
     useEffect(() => {
-        fetch('products.json')
+        fetch('http://localhost:5000/products')
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
@@ -24,7 +24,7 @@ const Products = () => {
                     ></SingleProducts>)
                 }
             </div>
-            <div className='flex justify-center mb-5'>
+            <div className='flex justify-end mb-5'>
                 <button class="btn btn-wide">See All Products</button>
             </div>
 

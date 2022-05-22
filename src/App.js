@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import Home from './Pages/Home/Home';
+import Purchase from './Pages/Home/Purchase';
 
 
 function App() {
@@ -16,6 +17,9 @@ function App() {
           <Route path='/'element={<Home></Home>}></Route>
           <Route path='/login'element={<Login></Login>}></Route>
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
+          <Route path='/signup'element={<SignUp></SignUp>}></Route>
+          <Route path='/purchase/:ItemID'element={<Purchase></Purchase>}></Route>
+          
         </Routes>
     </div>
   );
