@@ -4,6 +4,7 @@ import SingleProducts from './SingleProducts';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
+    const sliceProducts = products.slice(0,3);
 
     useEffect(() => {
         fetch('products.json')
@@ -17,7 +18,7 @@ const Products = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-20'>
                 {
-                    products.map(product=><SingleProducts
+                    sliceProducts.map(product=><SingleProducts
                     key={product._id}
                     product = {product}
                     ></SingleProducts>)

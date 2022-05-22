@@ -10,7 +10,7 @@ const SingleProducts = ({ product }) => {
             <div class="card-body items-center text-center">
                 <h2 class="card-title">{name}</h2>
                 <p>Available Quantity: {availableQuantity}</p>
-                <p>Minimum Quantity: {minQuantity}</p>
+                <p>Minimum Order Quantity: {minQuantity}</p>
                 <p>Description: {description}</p>
                 <p>Price: BDT {price} /unit</p>
                 <div class="card-actions">
