@@ -6,6 +6,8 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -21,6 +23,7 @@ function App() {
           <Route path='/purchase/:ItemID'element={<Purchase></Purchase>}></Route>
           
         </Routes>
+        <ToastContainer />
     </div>
   );
 }
