@@ -8,6 +8,11 @@ import Home from './Pages/Home/Home';
 import Purchase from './Pages/Home/Purchase';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
+
 
 
 function App() {
@@ -21,6 +26,11 @@ function App() {
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
           <Route path='/purchase/:ItemID'element={<Purchase></Purchase>}></Route>
+          <Route path='/dashboard'element={<Dashboard></Dashboard>}>
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path='review' element={<AddReview></AddReview>}></Route>
+            <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
+          </Route>
           
         </Routes>
         <ToastContainer />
