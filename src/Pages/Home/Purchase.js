@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
 
@@ -8,6 +8,7 @@ const Purchase = () => {
     const { ItemID } = useParams();
     const [product, setProduct] = useState({});
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const url = `http://localhost:5000/products/${ItemID}`;
@@ -86,7 +87,7 @@ const Purchase = () => {
                         <input type="email" name='email' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Add Phone Number" required className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='address' placeholder='Add Address' required className="input input-bordered w-full max-w-xs" />
-                        <input type="submit" value="Confirm Order" placeholder="Type here" className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
+                        <input type="submit" value="Confirm Order" placeholder="Type here" onClick={() => navigate('/dashboard')} className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
                     </form>
                 </div>
             </div>
