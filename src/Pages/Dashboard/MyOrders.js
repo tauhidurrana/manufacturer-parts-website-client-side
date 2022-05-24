@@ -36,7 +36,7 @@ const MyOrders = () => {
       </tr>
     </thead>
     <tbody>
-        {
+        { orders.length > 0 &&
             orders.map((order, index)=> <tr>
                 <th>{index +1}</th>
                 <td>{order.userName}</td>
