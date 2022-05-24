@@ -15,6 +15,8 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import AllUsers from './Pages/Dashboard/AllUsers';
 import RequireAuth from './Pages/Login/RequireAuth';
 import RequireAdmin from './Pages/Login/RequireAdmin';
+import AllOrders from './Pages/Dashboard/AllOrders';
+import AddProduct from './Pages/Dashboard/AddProduct';
 
 
 
@@ -35,6 +37,8 @@ function App() {
             <Route path='review' element={<AddReview></AddReview>}></Route>
             <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>
             <Route path='allusers' element={<RequireAdmin><AllUsers></AllUsers></RequireAdmin>}></Route>
+            <Route path='allorders' element={<RequireAdmin><AllOrders></AllOrders></RequireAdmin>}></Route>
+            <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
           </Route>
           
         </Routes>
