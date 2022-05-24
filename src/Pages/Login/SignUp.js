@@ -40,6 +40,10 @@ const SignUp = () => {
     if (loading || gLoading || updating) {
         return <Loading></Loading>
     }
+
+    if(token){
+        navigate('/')
+    }
     return (
         <div className='flex justify-center items-center '>
             <div class="card w-96 bg-base-100 shadow-xl">
