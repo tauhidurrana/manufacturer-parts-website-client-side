@@ -33,12 +33,11 @@ const Login = () => {
         return <Loading></Loading>
     }
 
-    // if user login redirect to previous page
-    // useEffect( () =>{
-    //     if (token) {
-    //         navigate(from, { replace: true });
-    //     }
-    // }, [token, from, navigate])
+    if(token){
+        navigate('/dashboard');
+    }
+
+    
 
       const onSubmit = data => {
         console.log(data);
