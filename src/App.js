@@ -18,6 +18,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AllOrders from './Pages/Dashboard/AllOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
+import NotFound from './Pages/NotFound';
 
 
 
@@ -42,7 +43,9 @@ function App() {
             <Route path='allorders' element={<RequireAdmin><AllOrders></AllOrders></RequireAdmin>}></Route>
             <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
           </Route>
-          
+
+          <Route path='*' element={<NotFound></NotFound>}></Route>
+
         </Routes>
         <ToastContainer />
     </div>
