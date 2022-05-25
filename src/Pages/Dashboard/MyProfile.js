@@ -1,15 +1,17 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
     const { register, handleSubmit } = useForm();
+    const email = user.email;
 
     const onSubmit = data => {
-        console.log(data);
-        const url = 'http://localhost:5000/';
+        console.log(data, email);
+        const url = `http://localhost:5000/user/update/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {
@@ -20,6 +22,9 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                if (result.modifiedCount || result.matchedCount > 0) {
+                    toast.success('Profile update successfully !');
+                }
             })
 
     }
@@ -28,7 +33,7 @@ const MyProfile = () => {
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
                     <h2 class="card-title">Hello, {user.displayName} !</h2>
-                    <p>Your email : {user.email}</p>
+                    <p className=''>Your email : {user.email}</p>
                 </div>
             </div>
 

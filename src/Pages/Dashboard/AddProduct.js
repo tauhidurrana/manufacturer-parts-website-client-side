@@ -24,7 +24,7 @@ const AddProduct = () => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl ">
             <div className="card-body">
-                <h2 className="card-title text-2xl justify-center items-center">Add a Product</h2>
+                <h2 className="card-title text-2xl text-slate-900 uppercase justify-center items-center">Add a Product</h2>
                 <form onSubmit={handleSubmit(onSubmit)} className='grid grid-cols-1 gap-2 justify-items-center mt-3'>
                     <input className="input input-bordered w-full max-w-xs" placeholder='Product Name' {...register("name")} />
                     <input className="input input-bordered w-full max-w-xs" placeholder='Description' {...register("description")} />
