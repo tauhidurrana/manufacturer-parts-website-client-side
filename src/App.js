@@ -19,6 +19,7 @@ import AllOrders from './Pages/Dashboard/AllOrders';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Pages/NotFound';
+import Blogs from './Pages/Home/Blogs';
 
 
 
@@ -33,6 +34,9 @@ function App() {
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
           <Route path='/purchase/:ItemID'element={<Purchase></Purchase>}></Route>
+          <Route path='/blogs'element={<Blogs></Blogs>}></Route>
+
+          {/* nested route start */}
           <Route path='/dashboard'element={ 
             <RequireAuth> <Dashboard></Dashboard></RequireAuth>}>
             <Route index element={<MyOrders></MyOrders>}></Route>
@@ -43,6 +47,7 @@ function App() {
             <Route path='allorders' element={<RequireAdmin><AllOrders></AllOrders></RequireAdmin>}></Route>
             <Route path='addproduct' element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
           </Route>
+            {/* nested route end */}
 
           <Route path='*' element={<NotFound></NotFound>}></Route>
 
