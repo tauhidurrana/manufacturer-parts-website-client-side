@@ -33,7 +33,7 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal p-0">
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/blogs">Blogs</Link></li>
-                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/myportfolio">About</Link></li>
                     {
                          user && <li><Link to="/dashboard">Dashboard</Link></li>
                     }

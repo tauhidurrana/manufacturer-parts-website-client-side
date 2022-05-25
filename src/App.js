@@ -20,6 +20,7 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import Payment from './Pages/Dashboard/Payment';
 import NotFound from './Pages/NotFound';
 import Blogs from './Pages/Home/Blogs';
+import About from './Pages/Home/About';
 
 
 
@@ -35,6 +36,7 @@ function App() {
           <Route path='/signup'element={<SignUp></SignUp>}></Route>
           <Route path='/purchase/:ItemID'element={<Purchase></Purchase>}></Route>
           <Route path='/blogs'element={<Blogs></Blogs>}></Route>
+          <Route path='/myportfolio'element={<About></About>}></Route>
 
           {/* nested route start */}
           <Route path='/dashboard'element={ 
