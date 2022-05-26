@@ -3,23 +3,44 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import auth from '../../firebase.init';
 import { ToastContainer, toast } from 'react-toastify';
+import axios from 'axios';
 
 const Purchase = () => {
     const { ItemID } = useParams();
     const [product, setProduct] = useState({});
+    const [orderQty, setOrderQty] = useState(0)
     const [user] = useAuthState(auth);
+
+
     const navigate = useNavigate();
 
     useEffect(() => {
         const url = `http://localhost:5000/products/${ItemID}`;
         fetch(url)
             .then(res => res.json())
-            .then(data => setProduct(data))
-    }, [product]);
+            .then(data => {
+                setProduct(data);
+                setOrderQty(data.minQuantity);
+            })
+    }, [ItemID]);
 
-    const handleAddStock = event => {
-        event.preventDefault();
+    
+
+    // increase Quantity
+    const increaseQty = () =>{
+        setOrderQty(parseInt(orderQty) + 1);
     }
+
+    // decrease Quantity
+    const decreaseQty = () =>{
+        if(orderQty>product.minQuantity){
+            setOrderQty(parseInt(orderQty) - 1);
+        }
+    }
+    // price calculation
+    let price = product.price;
+    let totalPrice;
+    totalPrice = price * orderQty;
 
     const handleBooking = event => {
         event.preventDefault();
@@ -59,12 +80,15 @@ const Purchase = () => {
                     <div className="card-body">
                         <h2 className="card-title">{product?.name}</h2>
                         <p>Description: {product?.description}</p>
-                        <p>Price: BDT {product?.price}</p>
+                        <p>Price: $ {product?.price} / pcs</p>
                         <p>Available Quantity: {product?.availableQuantity}</p>
                         <p>Minimum Order: {product?.minQuantity}</p>
+                        <p>Total Price: {totalPrice}</p>
+                        <p>Enter Quantity:</p>
                         <div className='flex justify-center items-center '>
-                            <button className="btn btn-secondary mr-2 text-white font-bold text-lg">+</button>
-                            <button className="btn btn-secondary ml-2 text-white font-bold text-lg">-</button>
+                            <button onClick={increaseQty} className="btn btn-secondary mr-2 text-white font-bold text-lg">+</button>
+                            {orderQty}
+                            <button onClick={decreaseQty} className="btn btn-secondary ml-2 text-white font-bold text-lg">-</button>
                         </div>
                     </div>
                 </div>
@@ -77,7 +101,7 @@ const Purchase = () => {
                     <h2 className="card-title">Order Information</h2>
                     <form onSubmit={handleBooking} className='grid grid-cols-1 gap-2 justify-items-center mt-3'>
                         <input type="text" name='productName' disabled value={product?.name || ''} className="input input-bordered w-full max-w-xs" />
-                        <input type="text" name='price' disabled value={product?.price || ''} className="input input-bordered w-full max-w-xs" />
+                        <input type="text" name='price' disabled value={totalPrice || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='userName' disabled value={user?.displayName || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="email" name='email' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Add Phone Number" required className="input input-bordered w-full max-w-xs" />
@@ -93,3 +117,13 @@ const Purchase = () => {
 };
 
 export default Purchase;
+
+
+
+
+// useEffect(() => {
+//     const url = `http://localhost:5000/products/${ItemID}`;
+//     fetch(url)
+//         .then(res => res.json())
+//         .then(data => setProduct(data))
+// }, [product]);
