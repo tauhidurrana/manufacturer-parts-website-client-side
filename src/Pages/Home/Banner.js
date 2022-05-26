@@ -1,5 +1,5 @@
 import React from 'react';
-import computer from '../../Images/Banner/computer.jpg';
+import computer from '../../Images/Banner/circuit.jpg';
 
 const Banner = () => {
     return (
@@ -11,8 +11,8 @@ const Banner = () => {
 
 
                 <div className="flex-1">
-                    <h1 className="text-5xl font-bold">Your new smile starts here</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+                    <h1 className="text-5xl text-orange-400 font-bold uppercase">Next Generation <span className='text-green-500'>New Technology</span></h1>
+                    <p className="py-6 text-gray-500 ">we manufacture computer parts with latest inventions for your better experience.</p>
                     {/* <MainButton>Get Started</MainButton> */}
                 </div>
             </div>
