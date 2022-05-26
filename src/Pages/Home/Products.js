@@ -4,7 +4,7 @@ import SingleProducts from './SingleProducts';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
-    const sliceProducts = products.slice(0, 3);
+    const sliceProducts = products.slice(0, 6);
 
     useEffect(() => {
         fetch('http://localhost:5000/products')
@@ -14,7 +14,7 @@ const Products = () => {
 
     return (
         <div>
-            <h2 className='text-xl font-bold text-center'>Our Products</h2>
+            <h2 className='text-4xl text-bold text-center text-orange-500 uppercase'>Our Products</h2>
 
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-10'>
                 {
@@ -24,8 +24,8 @@ const Products = () => {
                     ></SingleProducts>)
                 }
             </div>
-            <div className='flex justify-end mb-5'>
-                <button class="btn btn-wide">See All Products</button>
+            <div className='flex justify-center mb-10'>
+                <button class="btn btn-xl">See All Products</button>
             </div>
 
         </div>

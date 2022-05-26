@@ -1,12 +1,12 @@
 import React from 'react';
-import chair from '../../Images/Banner/chair.png';
+import computer from '../../Images/Banner/computer.jpg';
 
 const Banner = () => {
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className='flex-1'>
-                    <img src={chair} className="w-full rounded-lg shadow-2xl " />
+                    <img src={computer} className="w-full rounded-lg shadow-2xl " />
                 </div>
 
 

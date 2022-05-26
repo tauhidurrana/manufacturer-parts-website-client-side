@@ -11,7 +11,7 @@ const AllReview = () => {
     },[])
     return (
         <div>
-            <h2 className='text-center text-2xl font-semibold'>All Reviews</h2>
+            <h2 className='text-center text-2xl font-semibold mb-10 uppercase text-orange-500'>All Reviews</h2>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-10'>
                 {
                     reviews?.map(review=><SingleReview
