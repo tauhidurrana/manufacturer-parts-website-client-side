@@ -51,18 +51,31 @@ const Blogs = () => {
 
             <h2 className='text-2xl text-green-500 font-bold mt-10 mb-5'>Q.3)How does prototypical inheritence work?</h2>
             <p>
-            The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects.
-            objects inherit properties from other objects — the prototypes. That's the idea of prototypal inheritance. JavaScript looks for inherited properties in the prototype of the object, but also in the prototype of the prototype, and so on in the chain of prototypes.
+                The Prototypal Inheritance is a feature in javascript used to add methods and properties in objects.
+                objects inherit properties from other objects — the prototypes. That's the idea of prototypal inheritance. JavaScript looks for inherited properties in the prototype of the object, but also in the prototype of the prototype, and so on in the chain of prototypes.
             </p>
 
             <h2 className='text-xl text-green-500 font-bold mt-10 mb-5'>Q.4)Why you do not set the state directly in React. For example, if you have const [products, setProducts] = useState([]). Why you do not set products = [...] instead, you use the setProducts?</h2>
+            <p>We know react create a virtual DOM while rendaring for the first time. When a state of components change it again create a virtual DOM and compare the result with previous DOM using diff algorithm and update the UI. So if we set the changes directly it will change the previous dom also. SO react will not understand the diffrence between them. And it will not change the UI. That is why we use a function to set the value. And we should never change the value directly</p>
 
             <h2 className='text-2xl text-green-500 font-bold mt-10 mb-5'>Q.5)You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
+            <p>We can search in array of object using objects property name uisng find() method.Where we can declare an arrow function which parameter will be the property we use to search the product. And we will set a condition. It will return an object which we are looking for.
+                For Example::
+                const score = [
+                {/* {name: 'Mushfiq', run: 217},
+                {name: 'Shakib', run: 220},
+                {name: 'Tamim', run: 222}
+                ]; */}
+
+                {/* const result = score.find( ({name}) => name === 'Mushfiq' );
+
+                console.log(result) //  */}
+                </p>
 
             <h2 className='text-2xl text-green-500 font-bold mt-10 mb-5'>Q.6)What is a unit test? Why should write unit tests?</h2>
 
             <p>Unit testing involves testing individual components of the software program or application. The main purpose behind this is to check that all the individual parts are working as intended. A unit is known as the smallest possible component of software that can be tested. Generally, it has a few inputs and a single output.
-            Unit testing significantly improves code quality. It helps developers to identify the smallest defects that might be present in the units before they go for integration testing.
+                Unit testing significantly improves code quality. It helps developers to identify the smallest defects that might be present in the units before they go for integration testing.
             </p>
         </div>
     );

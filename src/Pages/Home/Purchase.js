@@ -40,17 +40,17 @@ const Purchase = () => {
             },
             body: JSON.stringify(order)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log(data);
-            if(data.success){
-                toast(`Order submitted, Plz make payment`)
-            }
-            else{
-                toast.error(`Plz try again`)
-            }
-            setProduct(null);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.success) {
+                    toast(`Order submitted, Plz make payment`)
+                }
+                else {
+                    toast.error(`Plz try again`)
+                }
+                setProduct(null);
+            })
     }
     return (
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-5'>
@@ -59,24 +59,19 @@ const Purchase = () => {
                     <div className="card-body">
                         <h2 className="card-title">{product?.name}</h2>
                         <p>Description: {product?.description}</p>
-                    </div>
-                    <figure><img src={product?.img} alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <p>Available Quantity: {product?.availableQuantity}</p>
-                        <p>Minimum Order Quantity: {product?.minQuantity}</p>
                         <p>Price: BDT {product?.price}</p>
-                    </div>
-                    <div>
-                        <form onSubmit={handleAddStock}>
-                            <input type="number" name="stock" placeholder='Add quantity' className="input input-bordered input-accent w-full max-w-xs" />
-                            <button className="btn">Button</button>
-                        </form>
+                        <p>Available Quantity: {product?.availableQuantity}</p>
+                        <p>Minimum Order: {product?.minQuantity}</p>
+                        <div className='flex justify-center items-center '>
+                            <button className="btn btn-secondary mr-2 text-white font-bold text-lg">+</button>
+                            <button className="btn btn-secondary ml-2 text-white font-bold text-lg">-</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
             {/* Orders booking form */}
-            
+
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Order Information</h2>
@@ -87,7 +82,7 @@ const Purchase = () => {
                         <input type="email" name='email' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Add Phone Number" required className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='address' placeholder='Add Address' required className="input input-bordered w-full max-w-xs" />
-                        <input type="submit" value="Confirm Order" placeholder="Type here" onClick={() => navigate('/dashboard')} className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
+                        <input type="submit" value="Place Order" placeholder="Type here" onClick={() => navigate('/dashboard')} className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
                     </form>
                 </div>
             </div>
