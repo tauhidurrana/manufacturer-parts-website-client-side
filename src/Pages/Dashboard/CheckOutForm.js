@@ -13,7 +13,7 @@ const CheckOutForm = ({order}) => {
     const {_id, price, email, userName} = order;
 
     useEffect(()=>{
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://protected-thicket-60315.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -77,7 +77,7 @@ const CheckOutForm = ({order}) => {
                 order: _id,
                 transactionId: paymentIntent.id,
             }
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://protected-thicket-60315.herokuapp.com/order/${_id}`, {
                 method:'PATCH',
                 headers: {
                     'content-type': 'application/json',

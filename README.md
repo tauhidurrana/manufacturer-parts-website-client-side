@@ -1,9 +1,15 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Computer-Parts-Manufacturer [Live link](https://computer-parts-manufactu-88a04.web.app).
 
 ## Available Scripts
 
+About the projects:
+* computer parts manufacture company website
+* dynamic full stack website
+* central database connected
+* credit card payment system
+* strong security
 In the project directory, you can run:
 
 ### `npm start`

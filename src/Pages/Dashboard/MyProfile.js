@@ -11,7 +11,7 @@ const MyProfile = () => {
 
     const onSubmit = data => {
         console.log(data, email);
-        const url = `http://localhost:5000/user/update/${email}`;
+        const url = `https://protected-thicket-60315.herokuapp.com/user/update/${email}`;
         fetch(url, {
             method: 'PUT',
             headers: {

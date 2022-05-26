@@ -1,7 +1,7 @@
 [
     {
-        "_id": 1,
-        "name": "ENGINE DIAGNOSTIC",
+        
+        "name": "MOTHERBOARD",
         "price": 300,
         "availableQuantity": 20,
         "minQuantity": 2,
@@ -9,7 +9,7 @@
         "img": "https://i.ibb.co/dGDkr4v/1.jpg"
     },
     {
-        "_id": 2,
+        
         "name": "WHEEL ALIGNMENT",
         "price": 100,
         "availableQuantity": 30,
@@ -18,7 +18,7 @@
         "img": "https://i.ibb.co/tY8dmnP/2.jpg"
     },
     {
-        "_id": 3,
+        
         "name": "OIL CHANGING",
         "price": 150,
         "availableQuantity": 50,
@@ -27,7 +27,7 @@
         "img": "https://i.ibb.co/Yh04YVw/3.jpg"
     },
     {
-        "_id": 4,
+        
         "name": "BRAKE REPARING",
         "price": 180,
         "availableQuantity": 40,
@@ -36,7 +36,7 @@
         "img": "https://i.ibb.co/ZX2Cbkn/4.jpg"
     },
     {
-        "_id": 5,
+        
         "name": "WASH AND GLASSING",
         "price": 100,
         "availableQuantity": 20,
@@ -45,7 +45,34 @@
         "img": "https://i.ibb.co/FgQ3jXp/5.jpg"
     },
     {
-        "_id": 6,
+        
+        "name": "COMPLETE ANALYSIS",
+        "price": 200,
+        "availableQuantity": 60,
+        "minQuantity": 2,
+        "description": "Web Camera",
+        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+    },
+    {
+        
+        "name": "COMPLETE ANALYSIS",
+        "price": 200,
+        "availableQuantity": 60,
+        "minQuantity": 2,
+        "description": "Web Camera",
+        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+    },
+    {
+        
+        "name": "COMPLETE ANALYSIS",
+        "price": 200,
+        "availableQuantity": 60,
+        "minQuantity": 2,
+        "description": "Web Camera",
+        "img": "https://i.ibb.co/zJy5ZDd/6.jpg"
+    },
+    {
+        
         "name": "COMPLETE ANALYSIS",
         "price": 200,
         "availableQuantity": 60,

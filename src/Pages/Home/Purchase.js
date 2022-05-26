@@ -15,7 +15,7 @@ const Purchase = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const url = `http://localhost:5000/products/${ItemID}`;
+        const url = `https://protected-thicket-60315.herokuapp.com/products/${ItemID}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -56,7 +56,7 @@ const Purchase = () => {
             adress: event.target.address.value,
         }
 
-        fetch('http://localhost:5000/order', {
+        fetch('https://protected-thicket-60315.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -127,7 +127,7 @@ export default Purchase;
 
 
 // useEffect(() => {
-//     const url = `http://localhost:5000/products/${ItemID}`;
+//     const url = `https://protected-thicket-60315.herokuapp.com/products/${ItemID}`;
 //     fetch(url)
 //         .then(res => res.json())
 //         .then(data => setProduct(data))
