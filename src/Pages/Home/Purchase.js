@@ -24,20 +24,20 @@ const Purchase = () => {
             })
     }, [ItemID]);
 
-    
+
 
     // increase Quantity
-    const increaseQty = () =>{
+    const increaseQty = () => {
         setOrderQty(parseInt(orderQty) + 1);
 
     }
 
     // decrease Quantity
-    const decreaseQty = () =>{
-        if(orderQty>product.minQuantity){
+    const decreaseQty = () => {
+        if (orderQty > product.minQuantity) {
             setOrderQty(parseInt(orderQty) - 1);
         }
-        
+
     }
     // price calculation
     let price = product.price;
@@ -68,16 +68,6 @@ const Purchase = () => {
                 console.log(data);
                 if (data.success) {
                     toast(`Order submitted, Plz make payment`)
-                //     const restQty = product.availableQuantity - orderQty;
-                //     ( async () => {
-                //     const quantity = { quantity: restQty};
-
-                //     const url = `http://localhost:5000/parts/update/${id}`;
-                //     const { data } = await myAxios.patch(url, quantity);
-
-                //     console.log(data);
-                    
-                // })();
                 }
                 else {
                     toast.error(`Plz try again`)
@@ -118,8 +108,11 @@ const Purchase = () => {
                         <input type="email" name='email' disabled value={user?.email || ''} className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='phone' placeholder="Add Phone Number" required className="input input-bordered w-full max-w-xs" />
                         <input type="text" name='address' placeholder='Add Address' required className="input input-bordered w-full max-w-xs" />
-                        <input type="submit" value="Place Order" placeholder="Type here" onClick={() => navigate('/dashboard')} className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
+                        <input type="submit" value="Place Order" placeholder="Type here" className="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary w-full max-w-xs" />
                     </form>
+                    <div>
+                        <button  onClick={() => navigate('/dashboard')} className="btn flex justify-center">Click for payment</button>
+                    </div>
                 </div>
             </div>
 
