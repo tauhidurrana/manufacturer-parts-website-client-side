@@ -8,7 +8,7 @@ import axios from 'axios';
 const Purchase = () => {
     const { ItemID } = useParams();
     const [product, setProduct] = useState({});
-    const [orderQty, setOrderQty] = useState(0)
+    const [orderQty, setOrderQty] = useState(0);
     const [user] = useAuthState(auth);
 
 
@@ -29,6 +29,7 @@ const Purchase = () => {
     // increase Quantity
     const increaseQty = () =>{
         setOrderQty(parseInt(orderQty) + 1);
+
     }
 
     // decrease Quantity
@@ -36,6 +37,7 @@ const Purchase = () => {
         if(orderQty>product.minQuantity){
             setOrderQty(parseInt(orderQty) - 1);
         }
+        
     }
     // price calculation
     let price = product.price;
@@ -66,6 +68,16 @@ const Purchase = () => {
                 console.log(data);
                 if (data.success) {
                     toast(`Order submitted, Plz make payment`)
+                //     const restQty = product.availableQuantity - orderQty;
+                //     ( async () => {
+                //     const quantity = { quantity: restQty};
+
+                //     const url = `http://localhost:5000/parts/update/${id}`;
+                //     const { data } = await myAxios.patch(url, quantity);
+
+                //     console.log(data);
+                    
+                // })();
                 }
                 else {
                     toast.error(`Plz try again`)
