@@ -5,7 +5,7 @@ const Summary = () => {
     <div className='mt-20 mb-20'>
       <div className='text-center'>
         <h2 className=' text-4xl uppercase font-bold text-orange-500'>More than Million business Trust Us</h2>
-        <h2 className='mt-5 text-xl uppercase text-cyan-500'>Always try to meet users expectation</h2>
+        <h2 className='mt-5 text-xl font-semibold uppercase text-gree-500'>Always try to meet users expectation</h2>
       </div>
 
 

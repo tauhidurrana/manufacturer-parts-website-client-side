@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD8PGD4bbWIrjGN_zyEYCLCr-RWIRMSV3g",
-  authDomain: "computer-parts-manufactu-88a04.firebaseapp.com",
-  projectId: "computer-parts-manufactu-88a04",
-  storageBucket: "computer-parts-manufactu-88a04.appspot.com",
-  messagingSenderId: "490544009973",
-  appId: "1:490544009973:web:b14a179fbec0fd91fdabbc"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain ,
+  projectId:process.env.REACT_APP_projectId ,
+  storageBucket:process.env.REACT_APP_storageBucket ,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId ,
+  appId:process.env.REACT_APP_appId ,
 };
 
 // Initialize Firebase
@@ -20,3 +20,11 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export default auth;
+
+
+// apiKey: "AIzaSyD8PGD4bbWIrjGN_zyEYCLCr-RWIRMSV3g",
+//   authDomain: "computer-parts-manufactu-88a04.firebaseapp.com",
+//   projectId: "computer-parts-manufactu-88a04",
+//   storageBucket: "computer-parts-manufactu-88a04.appspot.com",
+//   messagingSenderId: "490544009973",
+//   appId: "1:490544009973:web:b14a179fbec0fd91fdabbc"
