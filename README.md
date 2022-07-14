@@ -10,7 +10,9 @@ About the projects:
 * central database connected
 * credit card payment system
 * strong security
-In the project directory, you can run:
+For Admin access:
+* user name: adnan@gmail.com
+* Password: 123456
 
 ### `npm start`
 
