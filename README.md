@@ -5,11 +5,13 @@ Computer-Parts-Manufacturer [Live link](https://computer-parts-manufactu-88a04.w
 ## Available Scripts
 
 About the projects:
-* computer parts manufacture company website
+* parts manufacture company website
 * dynamic full stack website
 * central database connected
 * credit card payment system
 * strong security
+* Admin role
+* JWT token
 
 ## For Admin access:
 * user name: adnan@gmail.com
